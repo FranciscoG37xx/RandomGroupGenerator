@@ -3,11 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package randomgroupgenerator;
+
 import java.util.Objects;
-/**
- *
- * @author franc
- */
 
 public class Group {
 
@@ -17,14 +14,13 @@ public class Group {
     public Group(Student s1, Student s2) {
 
         if (s1 == null || s2 == null) {
-            throw new IllegalArgumentException("Estudantes não podem ser null");
+            throw new IllegalArgumentException("Students cannot be null");
         }
 
         if (s1.equals(s2)) {
-            throw new IllegalArgumentException("Grupo não pode ter o mesmo estudante");
+            throw new IllegalArgumentException("A group cannot contain the same student twice");
         }
 
-        //ordem consistente
         if (s1.getId().compareTo(s2.getId()) < 0) {
             this.student1 = s1;
             this.student2 = s2;
@@ -46,7 +42,9 @@ public class Group {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Group)) return false;
+
         Group group = (Group) o;
+
         return student1.equals(group.student1) &&
                student2.equals(group.student2);
     }

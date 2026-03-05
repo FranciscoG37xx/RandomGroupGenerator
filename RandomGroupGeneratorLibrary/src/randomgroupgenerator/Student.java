@@ -4,11 +4,6 @@
  */
 package randomgroupgenerator;
 import java.util.Objects;
-/**
- *
- * @author franc
- */
-
 
 public class Student {
 
@@ -19,6 +14,7 @@ public class Student {
         if (id == null || id.isEmpty()) {
             throw new IllegalArgumentException("ID inválido");
         }
+
         this.id = id;
         this.name = name;
     }
@@ -35,7 +31,9 @@ public class Student {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Student)) return false;
+
         Student student = (Student) o;
+
         return id.equals(student.id);
     }
 
